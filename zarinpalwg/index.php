@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 		$_SESSION['apuser'] = $_POST['apx_user'];
         $result = send($desc,$merchent,$amount,$redirect); 
         if($result->Status == 100 ){
-            $go = "hhttps://www.zarinpal.com/pg/StartPay/" . $result->Authority; 
+            $go = "https://www.zarinpal.com/pg/StartPay/" . $result->Authority; 
             $_SESSION['invonum'] = $result>Authority;
             header("Location: $go");
         }else{
