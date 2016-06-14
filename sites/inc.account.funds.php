@@ -38,12 +38,12 @@
 				</div>
 			</td>
       <?php } ?>
- <?php if(config('support_zarinpalwg') == 1 || $xUS['id'] == 1){ ?>
+ <?php if(config('support_zarinpalzg') == 1 || $xUS['id'] == 1){ ?>
  			<td width="10"></td>
 		        <td>
 				<div class="click-btn zr ui-helper-clearfix op-pointer">
 					<div class="flo-l no-bold pad-5 ui-widget-header ui-corner-left">زرین پال</div>
-					<div class="flo-r no-bold pad-5 ui-state-hover ui-corner-right" style="border-width:1px 1px 1px 0;">حداقل <?php echo config('min_zarinpalwg'); ?>ت</div>
+					<div class="flo-r no-bold pad-5 ui-state-hover ui-corner-right" style="border-width:1px 1px 1px 0;">حداقل <?php echo config('min_zarinpalzg'); ?>ت</div>
 				</div>
 			</td>
       <?php } ?>
@@ -177,14 +177,14 @@ if(config('support_libertyreserve') == 1 || $xUS['id'] == 1){
 	}
 ?>  
 	 <?php
-if(config('support_zarinpalwg') == 1 || $xUS['id'] == 1){
+if(config('support_zarinpalzg') == 1 || $xUS['id'] == 1){
 ?>
 	<div id="xmb-zr" class="xmb-box" align="center" style="display:none;">
 
 		<div align="center" style="width:270px;margin:50px auto;"><span class="op-sha" style="font-size:17px;"><b>حساب زرین پال</b></span>
 			<table width="100%" cellpadding="0" cellspacing="5" class="pad-10 op-box-shadow op-slider ui-widget-content ui-corner-tr ui-corner-bottom">
 			<tr>
-				<td align="center"><span id="amount-zr" class="pad-2-5 bold" style="font-size:18px;color:#228B22;cursor:default;"><?php echo config('min_zarinpalwg'); ?> تومان</span></td>
+				<td align="center"><span id="amount-zr" class="pad-2-5 bold" style="font-size:18px;color:#228B22;cursor:default;"><?php echo config('min_zarinpalzg'); ?> تومان</span></td>
 			</tr>
 			<tr>
 				<td align="center"><div id="slider-zr"></div></td>
@@ -192,9 +192,9 @@ if(config('support_zarinpalwg') == 1 || $xUS['id'] == 1){
 			<tr>
 				<td align="center" style="padding-top:10px;">	
 <form method="POST" action="/?v=c&cc=order&pay=bank" id="form-zr" onsubmit="return false;" align="center">
-   <input type="hidden" name="zr_amnt" value="<?php echo config('min_zarinpalwg'); ?>">
+   <input type="hidden" name="zr_amnt" value="<?php echo config('min_zarinpalzg'); ?>">
    <input type="hidden" name="zr_comments" value="<?php echo $xUS['x_username']; ?>">
-   <input type="image" src="/includes/img/button/zarinpalwg.jpg" border="0" name="submit" alt="افزایش موجودی حساب با کارتهای عضو شبکه شتاب" />
+   <input type="image" src="/includes/img/button/zarinpalzg.jpg" border="0" name="submit" alt="افزایش موجودی حساب با کارتهای عضو شبکه شتاب" />
 </form>	
 				</td>
 			</tr>
@@ -247,7 +247,7 @@ if(config('support_pasargad') == 1 || $xUS['id'] == 1){
 
 <div id="xmb-apx" class="xmb-box" align="center" style="display:none;">
 
-		<div align="center" style="width:270px;margin:50px auto;"><span class="op-sha" style="font-size:17px;"><b>پرداخت zarinpalwg</b></span>
+		<div align="center" style="width:270px;margin:50px auto;"><span class="op-sha" style="font-size:17px;"><b>پرداخت zarinpalzg</b></span>
 			<table width="100%" cellpadding="0" cellspacing="5" class="pad-10 op-box-shadow op-slider ui-widget-content ui-corner-tr ui-corner-bottom">
 			<tr>
 				<td align="center"><span id="amount-apx" class="pad-2-5 bold" style="font-size:18px;color:#228B22;cursor:default;"><?php echo config('min_pasargad'); ?> تومان</span></td>
@@ -257,10 +257,10 @@ if(config('support_pasargad') == 1 || $xUS['id'] == 1){
 			</tr>
 			<tr>
 				<td align="center" style="padding-top:10px;">	
-<form method="POST" action="/zarinpalwg/" id="form-apx" onsubmit="return false;" align="center">
+<form method="POST" action="/zarinpalzg/" id="form-apx" onsubmit="return false;" align="center">
    <input type="hidden" name="apx_amount" value="<?php echo config('min_pasargad'); ?>0">
    <input type="hidden" name="apx_user" value="<?php echo $xUS['x_username']; ?>">
-   <input type="image" src="logo.gif" border="0" name="submit" alt="افزایش موجودی حساب با zarinpalwg" />
+   <input type="image" src="logo.gif" border="0" name="submit" alt="افزایش موجودی حساب با zarinpalzg" />
 </form>
 				</td>
 			</tr>
@@ -315,7 +315,7 @@ $(function(){
 		}
 	});
 	
-	$("#slider-zr").slider({range:"min",step:1000,value:<?php echo config('min_zarinpalwg'); ?>,min:<?php echo config('min_zarinpalwg'); ?>,max:350000,
+	$("#slider-zr").slider({range:"min",step:1000,value:<?php echo config('min_zarinpalzg'); ?>,min:<?php echo config('min_zarinpalzg'); ?>,max:350000,
 		slide:function(event,ui){
 			$("#amount-zr").text(ui.value.toFixed(0)+' تومان ');
 			$('#form-zr [name=zr_amnt]').val(ui.value/1);
@@ -383,7 +383,7 @@ $(function(){
 
 
 var $confirm_pl = $('<div align="center"></div>')
-		.html('افزایش موجودی حساب سپرده از طریق حساب <b>zarinpalwg<b>')
+		.html('افزایش موجودی حساب سپرده از طریق حساب <b>zarinpalzg<b>')
 		.dialog({autoOpen:false,resizable:false,width:450,minHeight:0,modal:true,title:'شما مطمئن هستید؟',
 			buttons:{
 				خیر:function(){$(this).dialog('close');return false;},

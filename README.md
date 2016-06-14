@@ -1,2 +1,2 @@
-WebGate-IranPCT
-===============
+ZarinGate-IranPCT
+=================

@@ -12,13 +12,13 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         $merchent = 'Your-merchent';
 		$amount = $_POST['apx_amount'];
 		$invoiceDate = date("Y/m/d H:i:s");
-        $redirect = urlencode("http://".$_SERVER["SERVER_NAME"]."/zarinpalwg/getresult.php?dates=".$invoiceDate);
+        $redirect = urlencode("http://".$_SERVER["SERVER_NAME"]."/zarinpalzg/getresult.php?dates=".$invoiceDate);
 		$_SESSION['invodat'] = $invoiceDate;
 		$_SESSION['invoprice'] = $_POST['apx_amount']/10;
 		$_SESSION['apuser'] = $_POST['apx_user'];
         $result = send($desc,$merchent,$amount,$redirect); 
         if($result->Status == 100 ){
-            $go = "https://www.zarinpal.com/pg/StartPay/" . $result->Authority; 
+            $go = "hhttps://www.zarinpal.com/pg/StartPay/" . $result->Authority . "/ZarinPal"; 
             $_SESSION['invonum'] = $result>Authority;
             header("Location: $go");
         }else{

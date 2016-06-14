@@ -42,8 +42,6 @@ if($result->Status == 100 && ($_GET['dates'] == $invod)){
 			Header('Location: http://'.$_SERVER["SERVER_NAME"].'/?v=c&cc=order&status=cancel');
 		}
 
-}else{
-	echo'ERR: '.$result->Status;
 }
 
 
